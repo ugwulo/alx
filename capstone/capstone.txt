@@ -1,0 +1,25 @@
+Create NAT for Private subnet and add as target to the private RTB
+configure bastion host passthrough
+
+Create load balancer
+add security group to allow 80, 443 traffic
+create target group
+
+Create Autoscaling group
+Use or create an AMI for the autoscaling
+create a launch template off the AMI
+create autoscaling grp using the launch template
+update autoscaling sg to allow ssh from bastion host sg
+edit health checks for ASG and turn on ELB health checks
+
+Launch the RDS MySql db instance
+configure the app server to communicate with the db
+set the db parameters in the parametr store
+
+import the db dump to rds
+mysql -u admin -p --host capstone-db.c5so282c2tgf.us-east-1.rds.amazonaws.com example < Countrydatadump.sql
+
+admin
+admin123
+example
+capstone-db.c5so282c2tgf.us-east-1.rds.amazonaws.com
